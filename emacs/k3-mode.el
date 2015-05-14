@@ -113,7 +113,7 @@
 ;;;; K Mode ;;;;
 
 ;;;###autoload
-(define-derived-mode k3-mode fundamental-mode
+(define-derived-mode k3-mode prog-mode
   "k3 mode"
   "Major Mode for the K3 framework"
   (setq font-lock-defaults '((k-font-lock-keywords)))
