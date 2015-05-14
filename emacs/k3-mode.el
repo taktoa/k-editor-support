@@ -23,10 +23,6 @@
   "Set to make \"--\" be used as a beginning of a line comment
    (emacs's syntax table is unable to differentiate 3 character long comment beginners)"
 )
-(defvar k-path "~/k-framework"
-  "Path to the k-framework. Set if you wish to use kompile from emacs. Defaults to ~/k-framework.
-   Currently doesn't do anything."
-)
 
 ;;;; Syntax Highlighting ;;;;
 (setq k-keywords
@@ -114,15 +110,12 @@
       '("kompile" . compile)))
 )
 
-
-
-
-
 ;;;; K Mode ;;;;
 
+;;;###autoload
 (define-derived-mode k3-mode fundamental-mode
   "k3 mode"
-  "Major Mode for the K3 framwork"
+  "Major Mode for the K3 framework"
   (setq font-lock-defaults '((k-font-lock-keywords)))
 
   ;; Comment entries
@@ -138,5 +131,8 @@
   ;; Clear up memory
   ;;(setq k-keywords nil k-keywords-regex nil)
 )
+
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.k\\'" . k3-mode))
 
 (provide 'k3-mode)
